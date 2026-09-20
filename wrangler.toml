@@ -1,0 +1,26 @@
+name = "apple-hk-stock-monitor"
+main = "src/index.js"
+
+compatibility_date = "2026-09-20"
+
+workers_dev = true
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+APPLE_REGION = "HK"
+APPLE_LOCALE = "zh-HK"
+
+[secrets]
+required = [
+  "TELEGRAM_BOT_TOKEN",
+  "TELEGRAM_CHAT_ID",
+  "ADMIN_KEY"
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "apple-stock-monitor"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+migrations_dir = "migrations"
